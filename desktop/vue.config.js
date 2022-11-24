@@ -6,7 +6,7 @@ module.exports = defineConfig({
         config
             .plugin('html')
             .tap(args => {
-                args[0].title = 'SyncEverything'
+                args[0].title = 'SyncIt'
                 return args
             })
     },
@@ -29,7 +29,7 @@ module.exports = defineConfig({
                 mac: {
                     icon: path.join(__dirname, './src/assets/512x512.png')
                 },
-                productName: "sync_everything", //应用的名称
+                productName: "sync_it", //应用的名称
             }
         }
     },
