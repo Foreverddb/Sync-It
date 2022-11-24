@@ -1,0 +1,45 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sync?useUnicode=true&characterEncoding=utf8
+    username: test
+    password: test001
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 30000
+    password: test001
+    jedis:
+      pool:
+        max-active: 100
+        max-idle: 10
+        min-idle: 0
+        max-wait: 1
+  servlet:
+    multipart:
+      max-file-size: 3MB
+
+# mybatis-profile
+mybatis:
+  type-aliases-package: com.example.sync_everything.entity
+  mapper-locations: classpath:mapper/*xml
+
+socket-io:
+  host: 0.0.0.0
+  port: 3000
+  pingTimeout: 60000
+  upgradeTimeout: 10000
+  allowCustomRequests: true
+  pingInterval: 25000
+  workCount: 100
+  bossCount: 10
+  maxFramePayloadLength: 1048576
+  maxHttpContentLength: 1048576
+file:
+  segmentSize: 2097152
+  savePath: /files/
+jwt:
+  secret-key: "test"
+
